@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>测试路由</title>
+  <style>
+    .nav {
+      width: 500px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+    .nav-item, .nav-item-s {
+      cursor: pointer;
+      margin: 0 20px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="nav">
+      <a class="nav-item" href="#/">首页</a>
+      <a class="nav-item" href="#/login">登录页面</a>
+      <a class="nav-item" href="#/profile">个人中心</a>
+    </div>
+
+    <div class="nav">
+      <span class="nav-item-s" data-page="/">首页</span>
+      <span class="nav-item-s" data-page="/login">登录页面</span>
+      <span class="nav-item-s" data-page="/profile">个人中心</span>
+      <span class="nav-item-s" data-page="/register">注册中心</span>
+    </div>
+    <div id="main">
+    </div>
+  </div>
+  <script src="./index.js" type="module"></script>
+  <!-- <script type="module" async></script> -->
+</body>
+</html>
