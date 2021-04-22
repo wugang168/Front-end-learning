@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端路由实现原理之hash模式</title>
+</head>
+<body>
+  <div>
+    <button onClick="buttonClick(event, '/page_1')">页面一</button>
+    <button onClick="buttonClick(event, '/page_2')"> 页面二</button>
+  </div>
+  <div>
+    <a href="#/page_1">a链接跳转页面一</a>
+    <a href="#/page_2">a链接跳转页面二</a>
+  </div>
+
+  <script>
+    /*
+      hash 模式实现
+
+      改变url 中的hash值  
+      1.a标签 href属性
+      2.location.hash = 'login'
+
+      监听hashchange事件
+
+      问题：
+      相同的hash切换,无法监听到
+    */
+    function buttonClick(event, hash_page) {
+      console.log(event)
+      location.hash = `#${hash_page}`;
+      console.log("改变了hash");
+    }
+    window.addEventListener("hashchange", ()=>{
+      console.log("监听到了hash变化了，hash的值=", location.hash);
+    })
+  </script>
+</body>
+</html>
